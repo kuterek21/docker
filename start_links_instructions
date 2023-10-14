@@ -1,3 +1,78 @@
 - https://learn.cantrill.io/courses/docker-fundamentals/lectures/44151958
 - https://www.docker.com/get-started/
 - https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+============================
+# Install DOCKER !
+
+sudo apt update
+
+sudo docker run --name web itd -p 8080:80 nginx
+## COMPOSE
+sudo apt install docker.io docker-compopse -y
+mkdir FOLDERNAME
+cd FOLDERNAME
+```
+nano docker-compose.yaml
+```
+```
+vesrsion: "3"
+services:
+  website:
+    image: ngix
+    ports:
+      - "8081:80"
+    restart: always
+```
+- run the compose file
+- creates docker with the network components etc
+  - inside the dir
+  - created a website 
+  - created network default network bridged
+`
+sudo docker-compose up -d // -d in the background
+`
+docker-compose ps
+`
+ - KIll it 
+`
+sudo docker-compose stop // just stops it
+`
+sudo docker-compose down // also deletes the components
+
+
+
+## download an image
+
+
+ - [hub.docker.com](hub.docker.com)
+`
+docker pull centos
+docker pull alpine
+
+`
+## start a docker 
+`
+docker run -t -d --name kuter centos
+docker run -t -d --name kuterek alpine
+`
+## to check if its working 
+`
+- docker images
+- docker ps
+## Loginto the centos
+`
+ docker exec -it kuter bash
+`
+## Loginto the alpine
+`
+ docker exec -it kuterek sh
+`
+
+## START & STOP
+
+docker stop [name]
+docker start [name]
+
+## CPU and resources usage
+
+- docker stats
